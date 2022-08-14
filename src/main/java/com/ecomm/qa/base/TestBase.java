@@ -16,6 +16,7 @@ import com.ecomm.qa.utility.TestUtil;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class TestBase {
+	//This is parent
 	public static WebDriver driver;
 	public static Properties prop;
 
