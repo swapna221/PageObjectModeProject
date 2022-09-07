@@ -15,7 +15,7 @@ import com.ecomm.qa.utility.ScrollFeatures;
 import com.ecomm.qa.utility.SwitcToDifferentWindow;
 import com.ecomm.qa.utility.SwitchToFrame;
 
-public class HomePage extends TestBase {
+public class FirstFit extends TestBase {
 	
 	//OR Object Repository
 	
@@ -73,7 +73,7 @@ public class HomePage extends TestBase {
 
 	//How to initialize page factory
 
-	public HomePage() throws IOException {
+	public FirstFit() throws IOException {
 		PageFactory.initElements(driver, this);
 	}
 	

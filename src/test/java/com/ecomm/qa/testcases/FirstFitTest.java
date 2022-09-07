@@ -5,22 +5,18 @@ import static org.testng.Assert.assertEquals;
 import java.io.IOException;
 
 import org.testng.annotations.AfterClass;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 import com.ecomm.qa.base.TestBase;
-import com.ecomm.qa.pages.HomePage;
+import com.ecomm.qa.pages.FirstFit;
 import com.ecomm.qa.pages.LoginPage;
 
-public class HomePageTest extends TestBase{
+public class FirstFitTest extends TestBase{
 	LoginPage log;
-	HomePage home;
+	FirstFit home;
 
-	public HomePageTest() throws IOException {
+	public FirstFitTest() throws IOException {
 		super();
 		
 	}
@@ -29,7 +25,7 @@ public class HomePageTest extends TestBase{
 	public void init() throws IOException, InterruptedException {
 		initilization();
 		 log = new LoginPage();
-		 home = new HomePage();
+		 home = new FirstFit();
 		 log.login(prop.getProperty("username"), prop.getProperty("password"));
 	}
 	
