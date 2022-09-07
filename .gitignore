@@ -1,0 +1,8 @@
+/target/
+/test-output/
+/bin/
+.gitignore
+.project
+.settings/
+.classpath
+application.log
