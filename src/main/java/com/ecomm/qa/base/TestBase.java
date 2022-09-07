@@ -1,6 +1,7 @@
 package com.ecomm.qa.base;
 
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.time.Duration;
 import java.util.Properties;
@@ -20,15 +21,13 @@ public class TestBase {
 	public static WebDriver driver;
 	public static Properties prop;
 
-	public TestBase() throws IOException {
+	
 
+	public static void initilization() throws IOException {
+		
 		prop = new Properties();
 		FileInputStream myFile = new FileInputStream(".\\src\\main\\java\\com\\ecomm\\qa\\config\\config.properties");
 		prop.load(myFile);
-
-	}
-
-	public static void initilization() {
 
 		String browserName = prop.getProperty("browser");
 		
@@ -43,11 +42,9 @@ public class TestBase {
 			WebDriverManager.edgedriver().setup();
 			driver = new EdgeDriver();
 		}
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 		driver.manage().window().maximize();
 		driver.manage().deleteAllCookies();
-		//driver.manage().timeouts().implicitlyWait(TestUtil.IMPLICIT_WAIT, TimeUnit.SECONDS);
-		
 		driver.get(prop.getProperty("url"));
 
 	}
