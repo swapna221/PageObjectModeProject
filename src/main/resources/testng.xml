@@ -10,7 +10,8 @@
 	<test name="Retentionworks Talent Keeper">
 		<classes>
 			<class name="com.ecomm.qa.testcases.LoginPageTest"></class>
-			<class name="com.ecomm.qa.testcases.HomePageTest"></class>
+			<class name="com.ecomm.qa.testcases.FirstFitTest"></class>
+			<class name="com.ecomm.qa.testcases.TalentWatchGeneralTest"></class>
 		</classes>
 	</test>
 </suite>
