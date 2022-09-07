@@ -1,10 +1,10 @@
 package com.ecomm.qa.testcases;
 
-import static org.testng.Assert.assertEquals;
-
 import java.io.IOException;
 
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
@@ -12,31 +12,28 @@ import com.ecomm.qa.base.TestBase;
 import com.ecomm.qa.pages.LoginPage;
 
 public class LoginPageTest extends TestBase {
-	LoginPage log ;
+	LoginPage obj ;
 
 	public LoginPageTest() throws IOException {
 		super();
 		
 	}
 	
-	@BeforeTest
+	@BeforeMethod
 	public void init() throws IOException {
 		initilization();
-		 log = new LoginPage();
+		 obj = new LoginPage();
 	}
 	
-	@Test
-	public void testLogin() {
-		log.login(prop.getProperty("username"), prop.getProperty("password"));
+	@Test(groups="Test1-login")
+	public void testLogin() throws InterruptedException {
+		obj.login(prop.getProperty("username"), prop.getProperty("password"));
 		
 	}
 	
-	@Test
-	public void validateLogo() {
-		assertEquals(true, log.validateLogo());
-	}
+
 	
-	@AfterTest
+	@AfterMethod
 	public void tearDown() {
 		driver.quit();
 	}
